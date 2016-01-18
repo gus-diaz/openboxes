@@ -178,12 +178,12 @@ log4j = {
 	//trace 'org.hibernate.type'
 	//debug 'org.hibernate.SQL'
 
-    System.setProperty 'mail.smtp.port', mail.error.port.toString()
+	System.setProperty 'mail.smtp.port', mail.error.port.toString()
     System.setProperty 'mail.smtp.connectiontimeout', "5000"
     System.setProperty 'mail.smtp.timeout', "5000"
 
     if (mail.error.starttls)
-        System.setProperty 'mail.smtp.starttls.enable', mail.error.starttls.toString()
+		System.setProperty 'mail.smtp.starttls.enable', mail.error.starttls.toString()
 
 	// Example of changing the log pattern for the default console
 	appenders {
@@ -198,16 +198,16 @@ log4j = {
 			def conversionPattern =
 				"Date: %d{MMM-dd-yyyy HH:mm:ss.SSS}%n" +
 				"Thread: [%t]%n" +
-                                "Username: %X{username}%n" +
-                                "Location: %X{location}%n" +
-                                "Locale: %X{locale}%n" +
+                "Username: %X{username}%n" +
+                "Location: %X{location}%n" +
+                "Locale: %X{locale}%n" +
 				"IP address: %X{ipAddress} http://whatismyipaddress.com/ip/%X{ipAddress}%n" +
 				"Request URI: %X{requestUri}%n" +
-                                "Request URL: %X{requestUrl}%n" +
+                "Request URL: %X{requestUrl}%n" +
 				"Query string: %X{queryString}%n" +
-                                "Server: %X{serverUrl}%n" +
-                                "Clickstream: %X{clickStreamUrl}%n%n" +
-                                "Stacktrace: %n%m%n"
+                "Server: %X{serverUrl}%n" +
+                "Clickstream: %X{clickStreamUrl}%n%n" +
+                "Stacktrace: %n%m%n"
 
 			// The 'alternate' appender is the best, but only works on localhost w/o authentication
 			if ("alternate".equals(mail.error.appender)&&"localhost".equals(mail.error.server)) {
@@ -271,64 +271,64 @@ log4j = {
 
 
 	fatal	'com.gargoylesoftware.htmlunit.javascript.StrictErrorReporter',
-                'org.grails.plugin.resource.ResourceMeta'
+            'org.grails.plugin.resource.ResourceMeta'
 
 	// We get some annoying stack trace when cleaning this class up after functional tests
 	error	'org.hibernate.engine.StatefulPersistenceContext.ProxyWarnLog',
-                'org.hibernate.impl.SessionFactoryObjectFactory',
-                'com.gargoylesoftware.htmlunit.DefaultCssErrorHandler',
-                'com.gargoylesoftware.htmlunit.IncorrectnessListenerImpl'
-                //'org.jumpmind.symmetric.config.PropertiesFactoryBean'
+            'org.hibernate.impl.SessionFactoryObjectFactory',
+            'com.gargoylesoftware.htmlunit.DefaultCssErrorHandler',
+            'com.gargoylesoftware.htmlunit.IncorrectnessListenerImpl'
+            //'org.jumpmind.symmetric.config.PropertiesFactoryBean'
 
 	warn	'org.mortbay.log',
-                'org.codehaus.groovy.grails.web.servlet',		// controllers
-                'org.codehaus.groovy.grails.web.sitemesh',		// layouts
-                'org.codehaus.groovy.grails.web.mapping.filter',	// URL mapping
-		'org.codehaus.groovy.grails.web.mapping', 		// URL mapping
-                'org.codehaus.groovy.grails.orm.hibernate',
-		'org.codehaus.groovy.grails.commons', 			// core / classloading
-		'org.codehaus.groovy.grails.plugins',			// plugins
-		//'org.codehaus.groovy.grails.orm.hibernate', 		// hibernate integration
-		'org.docx4j',
-		'org.apache.http.headers',
-		'org.apache.ddlutils',
-		//'org.apache.http.wire',
-		'net.sf.ehcache.hibernate',
-                //'org.hibernate.SQL',
-                //'org.hibernate.type',
-                //'org.jumpmind.symmetric.service.impl.PurgeService',
-                'org.hibernate.cache',
-                'org.apache.ddlutils'
+            'org.codehaus.groovy.grails.web.servlet',		// controllers
+            'org.codehaus.groovy.grails.web.sitemesh',		// layouts
+            'org.codehaus.groovy.grails.web.mapping.filter',	// URL mapping
+			'org.codehaus.groovy.grails.web.mapping', 		// URL mapping
+            'org.codehaus.groovy.grails.orm.hibernate',
+			'org.codehaus.groovy.grails.commons', 			// core / classloading
+			'org.codehaus.groovy.grails.plugins',			// plugins
+			//'org.codehaus.groovy.grails.orm.hibernate', 		// hibernate integration
+			'org.docx4j',
+			'org.apache.http.headers',
+			'org.apache.ddlutils',
+			//'org.apache.http.wire',
+			'net.sf.ehcache.hibernate',
+            //'org.hibernate.SQL',
+            //'org.hibernate.type',
+            //'org.jumpmind.symmetric.service.impl.PurgeService',
+            'org.hibernate.cache',
+            'org.apache.ddlutils'
 
 	info    'org.liquibase',
-                'com.opensymphony.clickstream',
-                'org.codehaus.groovy.grails.web.pages',		// GSP
-                'org.springframework',
-		'org.hibernate',
-		'com.mchange',
-		'org.pih.warehouse',
-		'grails.app',
-                'grails.app.controller',
-		'grails.app.bootstrap',
-		'grails.app.service',
-		'grails.app.task',
-                'grails.plugin.springcache',
-		'BootStrap',
-		'liquibase',
-		'com.gargoylesoftware.htmlunit'
+            'com.opensymphony.clickstream',
+            'org.codehaus.groovy.grails.web.pages',		// GSP			'com.mchange',
+            'org.springframework',
+			'org.hibernate',
+			'com.mchange',
+			'org.pih.warehouse',
+			'grails.app',
+            'grails.app.controller',
+			'grails.app.bootstrap',
+			'grails.app.service',
+			'grails.app.task',
+            'grails.plugin.springcache',
+			'BootStrap',
+			'liquibase',
+			'com.gargoylesoftware.htmlunit'
 
    debug 	'org.apache.cxf',
-                'grails.plugin.rendering',
-		'org.apache.commons.mail',
-                'grails.plugins.raven',
-                'net.kencochrane.raven',
-                //'com.unboundid'
-                //'org.hibernate.transaction',
-                //'org.jumpmind',
-                //'org.hibernate.jdbc',
-                //'org.hibernate.SQL',
-		//'com.gargoylesoftware.htmlunit',
-                'org.apache.http.wire'        // shows traffic between htmlunit and server
+            'grails.plugin.rendering',
+		   	'org.apache.commons.mail',
+            'grails.plugins.raven',
+            'net.kencochrane.raven',
+            //'com.unboundid'
+            //'org.hibernate.transaction',
+            //'org.jumpmind',
+            //'org.hibernate.jdbc',
+            //'org.hibernate.SQL',
+		   	//'com.gargoylesoftware.htmlunit',
+            'org.apache.http.wire'        // shows traffic between htmlunit and server
 
    //trace    'org.hibernate.type.descriptor.sql.BasicBinder',
    //         'org.hibernate.type'
