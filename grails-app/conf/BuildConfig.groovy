@@ -41,10 +41,7 @@ grails.project.dependency.resolution = {
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
-        mavenRepo "http://repository.jboss.com/maven2/"
-        mavenRepo "http://repo.grails.org/grails/plugins-releases/"
-        mavenRepo "http://repo.grails.org/grails/plugins/"
-        mavenRepo "http://localhost:8081/artifactory/plugins-releases-local/"
+        //mavenRepo "http://repository.jboss.com/maven2/"
     }
 
     dependencies {
@@ -89,12 +86,18 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.2'
         compile ":rendering:0.4.4"
 	compile ":raven:0.5.8"
-        compile 'net.sf.barcode4j:barcode4j:2.1'
-        compile 'org.codenarc:CodeNarc:0.24.1'
+        //compile 'net.sf.barcode4j:barcode4j:2.1'
+        //compile 'org.codenarc:CodeNarc:0.24.1'
         compile 'org.grails.plugins:console:1.5.6'
         compile 'org.grails.plugins:csv:0.3.1'
         compile 'org.grails.plugins:dynamic-controller:0.5.1'
         compile 'org.grails.plugins:external-config-reload:1.4.1'
+        //compile 'org.webjars:famfamfam-silk:1.3-1'
+        compile "org.grails.plugins:google-analytics:2.3.3"
+        compile "org.grails.plugins:google-visualization:1.0.2"
+        //compile 'joda-time:joda-time:2.9.1'
+        compile "org.grails.plugins:pretty-time:2.1.3.Final-1.0.1"
+        
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.15" // or ":hibernate4:4.3.5.2"
