@@ -86,16 +86,16 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.2'
         compile ":rendering:0.4.4"
 	compile ":raven:0.5.8"
-        //compile 'net.sf.barcode4j:barcode4j:2.1'
-        //compile 'org.codenarc:CodeNarc:0.24.1'
+        compile 'net.sf.barcode4j:barcode4j:2.1'
+        compile 'org.codenarc:CodeNarc:0.24.1'
         compile 'org.grails.plugins:console:1.5.6'
         compile 'org.grails.plugins:csv:0.3.1'
         compile 'org.grails.plugins:dynamic-controller:0.5.1'
         compile 'org.grails.plugins:external-config-reload:1.4.1'
-        //compile 'org.webjars:famfamfam-silk:1.3-1'
+        compile 'org.webjars:famfamfam-silk:1.3-1'
         compile "org.grails.plugins:google-analytics:2.3.3"
         compile "org.grails.plugins:google-visualization:1.0.2"
-        //compile 'joda-time:joda-time:2.9.1'
+        compile 'joda-time:joda-time:2.9.1'
         compile "org.grails.plugins:pretty-time:2.1.3.Final-1.0.1"
         
 
@@ -123,8 +123,6 @@ grails.project.dependency.resolution = {
         runtime(':quartz2:2.1.6.2')
         runtime(":resources:1.1.6")
 	runtime(":cache-headers:1.1.5")
-        runtime(":zipped-resources:1.0") { excludes 'resources' }
-        runtime(":cached-resources:1.0") { excludes 'resources', 'cache-headers' }
         runtime(":jquery:1.7.2")
         runtime(":jquery-ui:1.8.7") { excludes 'jquery' }        
         
@@ -135,7 +133,9 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
-
+        runtime(":zipped-resources:1.0.1") { excludes 'resources' }
+        runtime(":cached-resources:1.1") { excludes 'resources', 'cache-headers' }
+        
         // An alternative to the default resources plugin is the asset-pipeline plugin
         //compile ":asset-pipeline:1.6.1"
 
